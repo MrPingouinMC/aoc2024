@@ -3,6 +3,8 @@
 
 function token:parselines {out:"aoc out",in:"aoc input",model:"N{a}SN{b}"}
 
+function aoc:core/timer/step {name:"Input parsing"}
+
 scoreboard players set SOL VAR 0
 
 data modify storage temp arr.a set value []

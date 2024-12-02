@@ -1,7 +1,7 @@
 #Macro input : 
 #   path : a storage path reference
 
-function aoc:core/timer_end
+function aoc:core/timer/end
 
 $data modify storage aoc macro.submit.solution from storage $(path)
 
