@@ -1,6 +1,9 @@
 gamerule maxCommandChainLength 2147483647
 gamerule maxCommandChainLength 20000000
 
+gamerule commandModificationBlockLimit 32768
+gamerule commandModificationBlockLimit 100000
+
 #Used for general solving
 scoreboard objectives add VAR dummy
 scoreboard objectives add CONST dummy
