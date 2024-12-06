@@ -1,6 +1,6 @@
 #function aoc:core/load_test {test:"day2"}
 
-function token:parselines {out:"aoc out",in:"aoc input",model:"%{ }N{i}"}
+function token:parselines {out:"aoc out",in:"aoc input",model:"@]( )N*"}
 
 function aoc:core/timer/step {name:"Input parsing"}
 

@@ -1,7 +1,7 @@
 
 #function aoc:core/load_test {test:"day3"}
 
-function token:parselines {out:"aoc out",in:"aoc input",model:"%{(}N{a}a{comma}+N{b}A{end}+"}
+function token:parselines {out:"aoc out",in:"aoc input",model:"%}(().(raw)N(a)?r(comma)N(b)?r(par)"}
 scoreboard players set SOL VAR 0
 
 function aoc:core/timer/step {name:"Input parsing"}

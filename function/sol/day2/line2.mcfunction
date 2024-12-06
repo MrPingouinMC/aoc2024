@@ -1,6 +1,4 @@
-$data modify storage temp raw set value $(v)
-data modify storage temp line set value []
-data modify storage temp line append from storage temp raw.split[].i
+$data modify storage temp line set value $(v)
 
 scoreboard players set ANYSAFE VAR 0
 execute store result score SAFE VAR run function aoc:sol/day2/is_safe {in:"temp line"}

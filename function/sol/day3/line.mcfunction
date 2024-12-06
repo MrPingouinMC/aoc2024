@@ -1,21 +1,18 @@
 $data modify storage temp data set value $(v)
+
 data modify storage temp data set from storage temp data.split
 
-execute store result score COMMA VAR if data storage temp {data:{comma:{raw:","}}}
-scoreboard players set PAR VAR 0
-execute store result score PAR VAR run data get storage temp data.end.data[0]
+execute store result score COMMA VAR if data storage temp {data:{comma:","}}
 
-scoreboard players set A VAR 0
-scoreboard players set B VAR 0
+execute store result score PAR VAR if data storage temp {data:{par:")"}}
 
-execute unless data storage temp {data:{a:[]}} store result score A VAR run data get storage temp data.a
-execute unless data storage temp {data:{b:[]}} store result score B VAR run data get storage temp data.b
+execute store result score A VAR run data get storage temp data.a
+execute store result score B VAR run data get storage temp data.b
 
-execute if score ENABLED VAR matches 1 if score END_CORRECT VAR matches 1.. if score A VAR matches 1.. if score B VAR matches 1.. if score COMMA VAR matches 1 if score PAR VAR matches 41 run scoreboard players operation A VAR *= B VAR
-execute if score ENABLED VAR matches 1 if score END_CORRECT VAR matches 1.. if score A VAR matches 1.. if score B VAR matches 1.. if score COMMA VAR matches 1 if score PAR VAR matches 41 run scoreboard players operation SOL VAR += A VAR
+execute if score ENABLED VAR matches 1 if score END_CORRECT VAR matches 1.. if score A VAR matches 1.. if score B VAR matches 1.. if score COMMA VAR matches 1 if score PAR VAR matches 1 run scoreboard players operation A VAR *= B VAR
+execute if score ENABLED VAR matches 1 if score END_CORRECT VAR matches 1.. if score A VAR matches 1.. if score B VAR matches 1.. if score COMMA VAR matches 1 if score PAR VAR matches 1 run scoreboard players operation SOL VAR += A VAR
 
-function iter:util/concat {out:"temp full",in:"temp data.comma.raw", in2:"temp data.end.raw"}
-
+data modify storage temp full set from storage temp data.raw
 scoreboard players set END_CORRECT VAR 0
 execute if score END_CORRECT VAR matches 0 run data modify storage temp mul set string storage temp full -3
 execute if score END_CORRECT VAR matches 0 store result score END_CORRECT VAR if data storage temp {mul:"mul"}

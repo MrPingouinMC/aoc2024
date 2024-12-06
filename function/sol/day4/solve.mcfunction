@@ -1,5 +1,6 @@
+#function aoc:core/load_test {test:"day4"}
 
-function token:parselines {out:"aoc out",in:"aoc input",model:"C+"}
+function token:parselines {out:"aoc out",in:"aoc input",model:"C-"}
 scoreboard players set SOL VAR 0
 
 function aoc:core/timer/step {name:"Input parsing"}
