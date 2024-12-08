@@ -3,6 +3,6 @@
 
 function aoc:core/timer/end
 
-$data modify storage aoc macro.submit.solution from storage $(path)
+$data modify storage aoc macro.submit.solution set from storage $(path)
 
 function aoc:core/submit with storage aoc macro.submit

@@ -1,6 +1,5 @@
 $scoreboard players set V VAR $(v)
-execute if score V VAR matches 46 run setblock ~ ~ ~ light_gray_wool
-execute if score V VAR matches 46 run return 1
+execute if score V VAR matches 46 run return run setblock ~ ~ ~ light_gray_wool
 
 setblock ~ ~ ~ red_wool
 
