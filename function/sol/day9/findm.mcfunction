@@ -1,0 +1,1 @@
+$execute store result score TV VAR run data get storage temp filem.$(i)[0]
